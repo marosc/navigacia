@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V tomto pripade sa TextView nastavi az po kliknuti na tlacidlo. Po rotacii by sa nam zachovala hodnota len v EditTexte a v TextView by zostal prazdny. Preto je potrebne si uchovat pred ukoncenim fragmentu jeho hodnotu a nasledne ju obnovit ak znova bude obnoveny." app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/textView"/>
+
+    <Button android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Spat na fragment"
+            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
+    <EditText android:id="@+id/cislo" android:layout_width="0dp" android:layout_height="wrap_content"
+              app:layout_constraintEnd_toStartOf="@+id/guideline_right" android:layout_marginEnd="8dp"
+              app:layout_constraintStart_toStartOf="@+id/guideline_left" android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView android:id="@+id/hodnota" android:layout_width="wrap_content" android:layout_height="wrap_content"
+              app:layout_constraintEnd_toStartOf="@+id/guideline_right" android:layout_marginEnd="8dp"
+              app:layout_constraintStart_toStartOf="@+id/guideline_left" android:layout_marginStart="8dp"
+              app:layout_constraintTop_toBottomOf="@+id/cislo"/>
+
+    <com.example.navigacia.MojText android:id="@+id/hodnota2" android:layout_width="wrap_content" android:layout_height="wrap_content"
+              app:layout_constraintEnd_toStartOf="@+id/guideline_right" android:layout_marginEnd="8dp"
+              app:layout_constraintStart_toStartOf="@+id/guideline_left" android:layout_marginStart="8dp"
+              app:layout_constraintTop_toBottomOf="@+id/hodnota"/>
+
+
+    <Button android:id="@+id/nastav" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/hodnota2" app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            android:layout_marginStart="8dp" android:text="Nastav"/>
+
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline_left"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline_right"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.8"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
